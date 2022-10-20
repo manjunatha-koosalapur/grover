@@ -1,0 +1,20 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "pm-test": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json",
+    "pm-test-iternations": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json -n 2",
+    "pm-test-html-report": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json -r htmlextra",
+    "cy-test": "npx cypress run"
+  },
+  "keywords": [],
+  "author": "Manjunatha Koosalapur",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.9.0",
+    "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.11"
+  }
+}

@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "b09631d1-9d36-4b17-bff3-4b3385b4fd87",
+		"name": "GroverTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5995100"
+	},
+	"item": [
+		{
+			"name": "Get_random_jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//status code\r",
+							"pm.test(\"Validate status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//multiple assertions\r",
+							"pm.test(\"Validate response body - multiple assertions\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.categories).to.eql([]);\r",
+							"    pm.expect(jsonData.created_at).contains(\"2020-01-05\")\r",
+							"    pm.expect(jsonData.icon_url).to.eql(\"https://assets.chucknorris.host/img/avatar/chuck-norris.png\");\r",
+							"    pm.expect(jsonData.updated_at).contains(\"2020-01-05\")\r",
+							"    pm.expect(jsonData.url).contains(\"https://api.chucknorris.io/jokes\")\r",
+							"    pm.expect(jsonData.value).contains(\"Chuck Norris\")\r",
+							"});\r",
+							"\r",
+							"//Headers - Content-Type is presence\r",
+							"pm.test(\"Validate headers - Content-Type presence\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"\r",
+							"//Headers - Content Type value\r",
+							"pm.test(\"Validate headers - Content-Type value\", function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-type')).to.eql(\"application/json;charset=UTF-8\")\r",
+							"})\r",
+							"\r",
+							"//Cookies\r",
+							"pm.test(\"Validate cookies presence\", function () {\r",
+							"    pm.expect(pm.cookies.has(\"_cfduid\")).to.be.false\r",
+							"})\r",
+							"\r",
+							"//Response Time\r",
+							"pm.test(\"Validate response time less than 1600 ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1600)\r",
+							"})\r",
+							"\r",
+							"// Few similar tests with different assertion styles //\r",
+							"// tests [\"Validating status code\"] = responseCode.code === 200\r",
+							"// tests [\"Validating response body-categories\"] = responseBody.has([])\r",
+							"// tests [\"Validating response body-icon_url\"] = responseBody.has(\"https://assets.chucknorris.host/img/avatar/chuck-norris.png\")\r",
+							"// tests [\"Validating response body-updated_at\"] = responseBody.has(\"2020-01-05\")\r",
+							"// tests [\"Validating response body-url\"] = responseBody.has(\"https://api.chucknorris.io/jokes\")\r",
+							"// tests [\"Validating response body-value\"] = responseBody.has(\"Chuck Norris\")\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/jokes/random",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
