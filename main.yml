@@ -1,0 +1,12 @@
+- name: Install Node
+  uses: actions/setup-node@v1
+  with: 
+    node-version: '12.x'
+
+- name: Install newman
+  run: |
+    npm install -g newman
+
+- name: Run POSTMAN collection
+  run: |
+    newman run ./postman/collections/GroverTests.postman_collection.json -e Grover_TestEnvironment.postman_environment.json -r htmlextra
