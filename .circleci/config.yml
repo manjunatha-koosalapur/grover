@@ -6,5 +6,5 @@ jobs:
     steps:
       - checkout
       - newman/newman-run:
-          collection: ../GroverTests.postman_collection.json
-          environment: ../Grover_TestEnvironment.postman_environment.json
+          collection: .postman/GroverTests.postman_collection.json
+          environment: .postman/Grover_TestEnvironment.postman_environment.json
