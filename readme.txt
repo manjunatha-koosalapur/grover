@@ -16,4 +16,4 @@ npm run pm-test
 "pm-gtest-report": "newman run postman\\collections\\GroverGraphqlTest.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json -r htmlextra",
 "cy-test": "npx cypress run"
 
-Test videos: grover/cypress/videos/
+Test run videos: grover/cypress/videos/
