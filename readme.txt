@@ -5,6 +5,8 @@ In package.json script
 "pm-test": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json",
 "pm-test-iternations": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json -n 2",
 "pm-test-html-report": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json -r htmlextra",
+"pm-test": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json",
+"pm-test-html-report": "newman run postman\\collections\\GroverTests.postman_collection.json -e postman\\environment\\Grover_TestEnvironment.postman_environment.json -r htmlextra",
 "cy-test": "npx cypress run"
 
 In docker container
