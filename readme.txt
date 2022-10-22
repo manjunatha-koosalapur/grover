@@ -1,4 +1,4 @@
-In Command prompt
+To run test in Command prompt
 newman run "C:\Users\manju\Desktop\API\GroverTests.postman_collection.json" -e "C:\Users\manju\Desktop\API\Grover_TestEnvironment.postman_environment.json" -n 2
 
 In package.json script
