@@ -22,7 +22,7 @@
 									"});\r",
 									"\r",
 									"//multiple assertions\r",
-									"pm.test(\"Validate response body - multiple assertions\", function () {\r",
+									"pm.test(\"Validate response body - multiple assertions - with GitHubCI\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.categories).to.eql([]);\r",
 									"    pm.expect(jsonData.created_at).contains(\"2020-01-05\")\r",
