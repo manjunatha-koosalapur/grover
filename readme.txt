@@ -1,9 +1,11 @@
 To run test in command-line
 newman run https://www.getpostman.com/collections/12928f842f9dde4231b3
 
+
 To run test in docker container
 docker pull postman/newman;
 docker run -t postman/newman run https://www.getpostman.com/collections/12928f842f9dde4231b3
+
 
 To run test using script from package.json
 npm run pm-test
