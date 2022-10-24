@@ -263,6 +263,16 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify store code\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.store.code).contains('es')\r",
+									"    pm.expect(jsonData.data.store.defaultCurrency).contains('EUR')\r",
+									"});\r",
 									""
 								],
 								"type": "text/javascript"
@@ -296,6 +306,27 @@
 				},
 				{
 					"name": "query_storeID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify store ID\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.store.code).contains('es')\r",
+									"    pm.expect(jsonData.data.store.defaultCurrency).contains('EUR')\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
