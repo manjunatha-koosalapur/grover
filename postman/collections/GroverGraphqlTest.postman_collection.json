@@ -137,7 +137,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "query Store($storeId: ID) {\n  store(id: $storeId) {\n    alternativeLocales\n    code\n    defaultCurrency\n    defaultLocale\n    id\n  }\n}",
-								"variables": "{\n  \"storeId\": 3\n}\n"
+								"variables": "{\n  \"storeId\": 423\n}\n"
 							}
 						},
 						"url": {
@@ -233,7 +233,7 @@
 							"mode": "graphql",
 							"graphql": {
 								"query": "query Store($storeId: ID) {\n  store(id: $storeId) {\n    alternativeLocales\n    code\n    defaultCurrency\n    defaultLocale\n    id\n  }\n}",
-								"variables": "{\n  \"storeId\": 6\n}\n"
+								"variables": "{\n  \"storeId\": 14\n}\n"
 							}
 						},
 						"url": {
@@ -275,8 +275,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query Store {\r\n  store {\r\n    code\r\n  }\r\n}",
-								"variables": ""
+								"query": "query Store($storeCode: String) {\r\n  store(storeCode: $storeCode) {\r\n    alternativeLocales\r\n    code\r\n    defaultCurrency\r\n    defaultLocale\r\n  }\r\n}",
+								"variables": "{\r\n  \"storeCode\": \"es\"\r\n}"
 							}
 						},
 						"url": {
@@ -302,8 +302,8 @@
 						"body": {
 							"mode": "graphql",
 							"graphql": {
-								"query": "query Store {\r\n  store {\r\n    id\r\n  }\r\n}",
-								"variables": ""
+								"query": "query Store($storeId: ID) {\r\n  store(id: $storeId) {\r\n    alternativeLocales\r\n    code\r\n    defaultCurrency\r\n    defaultLocale\r\n  }\r\n}",
+								"variables": "{\r\n  \"storeId\": 423\r\n}"
 							}
 						},
 						"url": {
